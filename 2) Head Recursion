@@ -1,0 +1,21 @@
+//Head Recursion
+
+#include<iostream>
+using namespace std;
+
+int func(int n)
+{
+    if(n>0)
+    {
+        func(n-1);
+        cout<<n<<" ";
+    }
+}
+
+int main()
+{
+    int n=7;
+    func(7);
+    
+    return 0;
+}
