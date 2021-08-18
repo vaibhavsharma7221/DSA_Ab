@@ -1,0 +1,60 @@
+//Fabonacci Series using Recursion
+
+#include<iostream>
+using namespace std;
+
+int fibbo(int n)
+{
+    if(n<=1)
+    {
+        return n;
+    }
+    else
+    {
+        return (fibbo(n-2)+fibbo(n-1));
+    }
+}
+
+int fib(int n)
+{
+    int F[100];
+    
+    for(int i=0;i<100;i++)
+    {
+        F[i]=-1;
+    }
+    
+    if(n<=1)
+    {
+       if(F[n]==-1)
+       {
+           F[n]=n;
+       }
+    return F[n];
+    }
+    else
+    {
+        if(F[n-2]==-1)
+        {
+            F[n-2]=fib(n-2);
+        }
+        
+        if (F[n-1]==-1)
+        {
+            F[n-1]=fib(n-1);
+        }
+        
+        return F[n-2]+F[n-1];
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    
+    cout<<fibbo(n)<<"\n";
+    cout<<fib(n);
+    
+    return 0;
+}
